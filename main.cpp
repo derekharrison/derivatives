@@ -16,9 +16,9 @@
 //Declare table f
 t_elem ***f_table;
 
-//Track number of operations
-static int num_operations_dp = 0;
-static int num_operations_no_dp = 0;
+//Track number of calls
+static int num_calls_dp = 0;
+static int num_calls_no_dp = 0;
 
 //Function of which the derivative is computed
 long double func(long double x) {
@@ -30,8 +30,8 @@ long double df_dx(long double xo, long double x, int n) {
     long double f = 0.0;
     long double dx = 0.0001;
 
-    //Count number of operations
-    num_operations_dp++;
+    //Count number of calls
+    num_calls_dp++;
 
     //Map x coordinate to table index
     int table_index = (int) round((x - xo)/dx);
@@ -61,8 +61,8 @@ long double df_dx_no_DP(long double x, int n) {
     long double f = 0.0;
     long double dx = 0.0001;
 
-    //Count number of operations
-    num_operations_no_dp++;
+    //Count number of calls
+    num_calls_no_dp++;
 
     if(n == 0) {
         f = func(x);
@@ -114,9 +114,9 @@ int main(int argc, char* argv[]) {
     //Print results
     printf("y: %f\n", (double) y3);
 
-    //Print number of operations
-    printf("number of operations using dp: %i\n", num_operations_dp);
-    printf("number of operations without dp: %i\n", num_operations_no_dp);
+    //Print number of calls
+    printf("number of calls using dp: %i\n", num_calls_dp);
+    printf("number of calls without dp: %i\n", num_calls_no_dp);
 
     printf("done\n");
 
