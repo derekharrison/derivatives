@@ -13,8 +13,8 @@
 #include <cmath>
 #include "calc_derivatives.hpp"
 
-#define N 4 //Highest derivative order
-t_elem ***f_table; //Declare table f
+//Declare table f
+t_elem ***f_table;
 
 //Function of which the derivative is computed
 long double func(long double x) {
@@ -65,6 +65,9 @@ long double df_dx_no_DP(long double x, int n) {
 }
 
 int main(int argc, char* argv[]) {
+
+    //Highest derivative order
+    int N = 4;
 
     //Initialize table for memoization
     f_table = new t_elem**[N+1];
