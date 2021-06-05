@@ -14,7 +14,7 @@ class CalcDerivative {
 private:
     t_elem ***f_table;
 public:
-    int N = 4;
+    int N;
     long double x;
 
     CalcDerivative(long double x, int N);
